@@ -9,7 +9,7 @@ from .base import FunctionalTest
 import os
 class MyListsTest(FunctionalTest):
 
-    @unittest.skip
+ #   @unittest.skip
     def create_pre_authenticated_session(self, email):
         user = User.objects.create(email=email)
         session = SessionStore()
@@ -24,11 +24,12 @@ class MyListsTest(FunctionalTest):
             name=settings.SESSION_COOKIE_NAME,
             value=session.session_key, #2
             path='/',
-            domain='.herokuapp.com'
+            #domain='.herokuapp.com'
+            domain='localhost'
         ))
         self.browser.get(self.live_server_url + "/404_no_such_url/")
 
-    @unittest.skip
+  #  @unittest.skip
     def test_logged_in_users_lists_are_saved_as_my_lists(self):
         # Edith is a logged-in user
         self.create_pre_authenticated_session('edith@example.com')
