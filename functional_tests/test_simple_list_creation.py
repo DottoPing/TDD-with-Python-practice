@@ -47,7 +47,8 @@ class NewVisitorTest(FunctionalTest):
         self.browser.quit()
         #self.browser = webdriver.Chrome('C:\\MikeData\\study\\TDD\\superlists\\chromedriver.exe')
         #chromedriver = "/home/dotto/Documents/TDD-with-Python-practice/superlists/chromedriver"
-        chromedriver = "/home/dotto/Downloads/chromedriver_64/chromedriver"
+        #chromedriver = "/home/dotto/Downloads/chromedriver_64/chromedriver"
+        chromedriver = "superlists/chromedriver"
         os.environ["webdriver.chrome.driver"] = chromedriver
         self.browser = webdriver.Chrome(chromedriver)
         #self.browser = webdriver.PhantomJS()

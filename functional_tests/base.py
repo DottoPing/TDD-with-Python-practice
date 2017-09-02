@@ -8,7 +8,8 @@ class FunctionalTest(StaticLiveServerTestCase):
     @classmethod
     def setUp(self):
         #self.browser = webdriver.Chrome('C:\\MikeData\\study\\TDD\\superlists\\chromedriver.exe')
-        chromedriver = "/home/dotto/Downloads/chromedriver_64/chromedriver"
+        #chromedriver = "/home/dotto/Downloads/chromedriver_64/chromedriver"
+        chromedriver = "superlists/chromedriver"
         self.browser = webdriver.Chrome(chromedriver)
         #self.browser = webdriver.PhantomJS()
         self.browser.implicitly_wait(3)
