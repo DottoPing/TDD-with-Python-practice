@@ -1,14 +1,16 @@
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.support.ui import WebDriverWait
+import os
 
 class FunctionalTest(StaticLiveServerTestCase):
 
     @classmethod
     def setUp(self):
         #self.browser = webdriver.Chrome('C:\\MikeData\\study\\TDD\\superlists\\chromedriver.exe')
-        #self.browser = webdriver.Chrome('/home/dotto/Documents/TDD-with-Python-practice/superlists/chromedriver')
-        self.browser = webdriver.PhantomJS()
+        chromedriver = "/home/dotto/Downloads/chromedriver_64/chromedriver"
+        self.browser = webdriver.Chrome(chromedriver)
+        #self.browser = webdriver.PhantomJS()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):

@@ -1,6 +1,7 @@
 from .base import FunctionalTest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import os
 
 
 class NewVisitorTest(FunctionalTest):
@@ -45,8 +46,11 @@ class NewVisitorTest(FunctionalTest):
         # Now a new user, Francis, comes along to the site.
         self.browser.quit()
         #self.browser = webdriver.Chrome('C:\\MikeData\\study\\TDD\\superlists\\chromedriver.exe')
-        #self.browser = webdriver.Chrome('/home/dotto/Documents/TDD-with-Python-practice/superlists/chromedriver')
-        self.browser = webdriver.PhantomJS()
+        #chromedriver = "/home/dotto/Documents/TDD-with-Python-practice/superlists/chromedriver"
+        chromedriver = "/home/dotto/Downloads/chromedriver_64/chromedriver"
+        os.environ["webdriver.chrome.driver"] = chromedriver
+        self.browser = webdriver.Chrome(chromedriver)
+        #self.browser = webdriver.PhantomJS()
         self.browser.implicitly_wait(3)
 
         # Francis visits the home page.  There is no sign of Edith's
