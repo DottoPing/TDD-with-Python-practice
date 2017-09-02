@@ -45,7 +45,7 @@ class NewVisitorTest(FunctionalTest):
         # Now a new user, Francis, comes along to the site.
         self.browser.quit()
         #self.browser = webdriver.Chrome('C:\\MikeData\\study\\TDD\\superlists\\chromedriver.exe')
-        #self.browser = webdriver.Chrome('/home/dotto/Documents/TDD_Practice/TDD-with-Python-practice/superlists/chromedriver')
+        #self.browser = webdriver.Chrome('/home/dotto/Documents/TDD-with-Python-practice/superlists/chromedriver')
         self.browser = webdriver.PhantomJS()
         self.browser.implicitly_wait(3)
 

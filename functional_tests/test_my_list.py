@@ -2,12 +2,14 @@ from django.conf import settings
 from django.contrib.auth import BACKEND_SESSION_KEY, SESSION_KEY, get_user_model
 User = get_user_model()
 from django.contrib.sessions.backends.db import SessionStore
+import unittest
 
 from .base import FunctionalTest
 
 import os
 class MyListsTest(FunctionalTest):
 
+    @unittest.skip
     def create_pre_authenticated_session(self, email):
         user = User.objects.create(email=email)
         session = SessionStore()
@@ -26,6 +28,7 @@ class MyListsTest(FunctionalTest):
         ))
         self.browser.get(self.live_server_url + "/404_no_such_url/")
 
+    @unittest.skip
     def test_logged_in_users_lists_are_saved_as_my_lists(self):
         # Edith is a logged-in user
         self.create_pre_authenticated_session('edith@example.com')
