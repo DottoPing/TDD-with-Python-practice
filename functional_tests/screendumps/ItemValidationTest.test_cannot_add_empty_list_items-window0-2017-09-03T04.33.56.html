@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<title>To-Do lists</title>
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/static/base.css" rel="stylesheet" />
+    
+    </head><body>
+
+    <div class="container">
+
+      <nav class="navbar navbar-default" role="navigation">
+        <a class="navbar-brand" href="/">Superlists</a>
+        
+          <form class="navbar-form navbar-right" method="POST" action="/accounts/login">
+            <span>Enter email to log in:</span>
+            <input class="form-control" name="email" id="id_login" type="text" />
+            <input type="hidden" name="csrfmiddlewaretoken" value="2T3RdpGQsae8n2i72HnaQExPLRPVEP3A" />
+          </form>
+        
+      </nav>
+
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 jumbotron">
+                <div class="text-center">
+                	<h1>Your To-Do list</h1>
+                    
+                	<form method="POST" action="/lists/3/">
+                		<input class="form-control input-lg" id="id_text" name="text" placeholder="Enter a to-do item" type="text" />
+                		<input type="hidden" name="csrfmiddlewaretoken" value="2T3RdpGQsae8n2i72HnaQExPLRPVEP3A" />
+                        
+                	</form>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                
+	<table id="id_list_table" class="table">
+		
+			<tbody><tr><td>1: Buy milk </td></tr>
+		
+	</tbody></table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                
+                
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="/static/list.js"></script>
+    
+
+</body></html>
